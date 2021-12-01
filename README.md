@@ -1,8 +1,8 @@
 # Installation
-`git clone https://github.com/ridoananda/todo-app`
-`cd todo-app`
-`npm install` or `yarn`
-`npm run dev` or `yarn dev`
+```git clone https://github.com/ridoananda/todo-app```
+```cd todo-app```
+```npm install``` or ```yarn```
+```npm run dev` or `yarn dev```
 Enjoy!
 
 # Vue 3 + Vite
