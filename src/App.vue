@@ -42,6 +42,7 @@ const touchStart = (e) => {
 	todoItems.forEach((item) => item.style.transform = `translateX(0px)`)
 	dragged.value = null
 }
+
 const touchMove = (i, e) => {
 	const todoItem = document.querySelectorAll('#todoItem')[i]
 	e = e.changedTouches ? e.changedTouches[0] : e;
@@ -69,15 +70,12 @@ const touchMove = (i, e) => {
 			<div class="mt-8">
 				<div class="text-text-color uppercase tracking-wider font-semibold text-sm mb-3">Today’s tasks</div>
 				<!-- Task list -->
-				<div
-					@touchmove="touchMove(index, $event)"
-					@touchstart="touchStart"
-					v-for="(item, index) in items"
-					class="relative"
-				>
+				<div v-for="(item, index) in items" class="relative">
 					<div
 						class="bg-primary rounded-2xl py-4 px-3 mb-3 shadow-md hover:shadow-2xl transform transition"
 						id="todoItem"
+						@touchmove="touchMove(index, $event)"
+						@touchstart="touchStart"
 						:class="{ '-translate-x-12': dragged == index }"
 					>
 						<div class="flex items-center w-full">
@@ -105,7 +103,11 @@ const touchMove = (i, e) => {
 							>{{ item.title }}</div>
 						</div>
 					</div>
-					<div v-if="dragged == index" class="absolute top-3 right-1" @click="deleteTask(index)">
+					<div
+						:class="{ 'hidden md:block': dragged != index }"
+						class="absolute top-3 right-1 z-10 cursor-pointer"
+						@click="deleteTask(index)"
+					>
 						<svg
 							width="30"
 							height="30"

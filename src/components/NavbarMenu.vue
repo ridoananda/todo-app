@@ -80,7 +80,7 @@ const active = ref(false)
 	<!-- <transition name="navbar" mode="out-in"> -->
 	<div
 		:class="{ 'navbar-leave': !active }"
-		class="md:block bg-primary h-screen w-10/12 sm:w-8/12 md:w-5/12 lg:w-4/12 rounded-tr-3xl rounded-br-3xl md:rounded-none p-4 pt-5 overflow-y-scroll fixed left-0 top-0 z-20 transform transition-all -translate-x-0 duration-500"
+		class="md:block bg-primary h-screen w-10/12 sm:w-8/12 md:w-5/12 lg:w-4/12 rounded-tr-3xl rounded-br-3xl md:rounded-none p-4 pt-5 fixed left-0 top-0 z-20 transform transition-all -translate-x-0 duration-500"
 	>
 		<div class="flex items-center justify-between mb-8">
 			<div class="font-head text-xl font-bold">Menu</div>
@@ -196,6 +196,6 @@ const active = ref(false)
 </template>
 <style scoped>
 .navbar-leave {
-	@apply md:transform-none transform transition-all -translate-x-full duration-500;
+	@apply md:transform-none transform transition-all -translate-x-full duration-300;
 }
 </style>

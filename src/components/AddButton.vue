@@ -132,7 +132,7 @@ const saveTask = () => {
     box-shadow: 0px 4px 20px rgba(235, 6, 255, 0.3);
 }
 .modal-enter-active {
-    animation: bounce-in 0.4s ease-out both;
+    animation: bounce-in 0.35s ease-out both;
 }
 .modal-leave-active {
     animation: bounce-in 0.4s ease-out both reverse;
